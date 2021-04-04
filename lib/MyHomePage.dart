@@ -311,33 +311,19 @@ class _MyHomePageState extends State<MyHomePage> {
       list.addAll(temp);
     }
     list.insert(
-        0,
-        DrawerHeader(
-          decoration: BoxDecoration(
-              color: Colors.blue,
-              gradient: RadialGradient(radius: 1, colors: [
-                Colors.white,
-                lists.length == 0
-                    ? Colors.blue
-                    : currentIndex == -1
-                        ? Colors.blue
-                        : choiceColorMap[lists[currentIndex].color]
-              ])),
-          child: Center(
-            child: Text(
-              'Your Lists',
-              style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-          ),
-        ));
+      0,
+      DrawerHeader(
+        child: Text(
+          "Category List",
+          style: TextStyle(fontSize: 32),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
     GestureDetector gd = GestureDetector(
       child: Center(
         child: Icon(
           Icons.add_circle_outline,
-          color: Colors.grey,
           size: 40,
         ),
       ),
@@ -357,14 +343,16 @@ class _MyHomePageState extends State<MyHomePage> {
       },
     );
 
-    list.add(Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: DottedBorder(
-        color: Colors.grey,
-        strokeWidth: 1,
-        child: gd,
+    list.add(
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: DottedBorder(
+          color: Colors.grey,
+          strokeWidth: 1,
+          child: gd,
+        ),
       ),
-    ));
+    );
     return ListView(
       children: list,
     );
@@ -465,7 +453,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: <Widget>[
-                                              Text("$item dismissed"),
+                                              Text("$item.name dismissed"),
                                             ],
                                           ),
                                         ));
