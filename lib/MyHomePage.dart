@@ -281,6 +281,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   : choiceColorMap[lists[index].color],
             ),
             title: Text(job.name),
+            subtitle: Text(job.id.toString()),
             trailing: IconButton(
               icon: Icon(
                 Icons.delete,
@@ -453,7 +454,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: <Widget>[
-                                              Text("$item.name dismissed"),
+                                              Text("item dismissed"),
                                             ],
                                           ),
                                         ));
